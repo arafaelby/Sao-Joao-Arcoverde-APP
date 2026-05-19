@@ -43,10 +43,10 @@ desenvolvido para funcionar mesmo com sinal fraco ou sem internet.
 
 | Nome | Papel |
 |---|---|
-| Alex Rafael | Líder / Gerente de Projeto |
-| Gabriel Augusto | Desenvolvedor |
+| Alex Rafael | Líder |
+| Gabriel Augusto | Designer |
 | José Theves | Desenvolvedor |
-| Gustavo de Brito | Desenvolvedor |
+| Gustavo de Brito | Testes |
 
 ---
 
