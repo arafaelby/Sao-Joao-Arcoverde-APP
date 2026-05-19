@@ -1,8 +1,8 @@
-# 🎪 ArcoJoão — App Oficial São João de Arcoverde 2026
+# 🎪 São Joao em Arcoverde — App Oficial São João de Arcoverde 2026
 
 > Seu guia digital para o maior São João do Sertão pernambucano.
 
-O **ArcoJoão** é um aplicativo web mobile que reúne a programação completa,
+O **São Joao em Arcoverde** é um aplicativo web mobile que reúne a programação completa,
 guia turístico e serviços locais do São João de Arcoverde 2026 —
 desenvolvido para funcionar mesmo com sinal fraco ou sem internet.
 
@@ -34,7 +34,6 @@ desenvolvido para funcionar mesmo com sinal fraco ou sem internet.
 - **HTML5** — estrutura das telas
 - **CSS3** — estilização e layout responsivo mobile-first
 - **JavaScript** — lógica, consumo de dados e interatividade
-- **Leaflet.js** — mapas interativos offline
 - **JSON local** — base de dados da programação e serviços
 - **localStorage** — cache para funcionamento offline
 
