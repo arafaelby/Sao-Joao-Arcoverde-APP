@@ -1,20 +1,30 @@
-# 🎪 São Joao em Arcoverde — App Oficial São João de Arcoverde 2026
+# 🌽 São João em Arcoverde
+Aplicação Web desenvolvida com foco em divulgar o tradicional São João de Arcoverde, oferecendo informações sobre atrações, gastronomia, hospedagem e pontos turísticos da cidade. O projeto foi construído seguindo o conceito Mobile First e implementado como uma Progressive Web App (PWA), permitindo acesso mesmo sem conexão com a internet após o primeiro carregamento.
 
-> Seu guia digital para o maior São João do Sertão pernambucano.
+# 📖 Sobre o Projeto
+O São João de Arcoverde é um dos maiores eventos culturais do Nordeste, reunindo música, cultura popular, gastronomia e turismo. Este aplicativo foi criado para facilitar o acesso às principais informações do evento de forma rápida, intuitiva e acessível em dispositivos móveis.
 
-O **São Joao em Arcoverde** é um aplicativo web mobile que reúne a programação completa,
-guia turístico e serviços locais do São João de Arcoverde 2026 —
-desenvolvido para funcionar mesmo com sinal fraco ou sem internet.
+## 📱 Funcionalidades:
+
+📅 Informações sobre o evento
+🎤 Exibição de atrações e programação
+🍽️ Seção de gastronomia local
+🏨 Informações sobre hospedagem
+📍 Destaque para pontos turísticos da cidade
+📱 Interface responsiva para smartphones, tablets e desktops
+🌐 Funcionamento offline através de PWA
+📲 Possibilidade de instalação como aplicativo no dispositivo
 
 ---
 
-## 📱 Funcionalidades
+## 🛠️ Tecnologias Utilizadas
 
-- 🎵 **Programação completa** — shows, artistas, palcos e horários
-- 🗺️ **Mapa dos polos** — localização dos palcos e pontos turísticos
-- 🏨 **Serviços locais** — hospedagem, restaurantes e guia gastronômico
-- 📖 **Guia turístico** — história da festa e informações sobre Arcoverde
-- 📶 **Modo offline** — funciona sem internet após o primeiro acesso
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **Progressive Web App (PWA)**
+- **Service Worker**
+- **Web App Manifest**
 
 ---
 
@@ -29,27 +39,24 @@ desenvolvido para funcionar mesmo com sinal fraco ou sem internet.
 
 ---
 
-## 🛠️ Tecnologias
-
-- **HTML5** — estrutura das telas
-- **CSS3** — estilização e layout responsivo mobile-first
-- **JavaScript** — lógica, consumo de dados e interatividade
-- **JSON local** — base de dados da programação e serviços
-- **localStorage** — cache para funcionamento offline
-
----
 
 ## 👥 Equipe
 
 | Nome | Papel |
 |---|---|
-| Alex Rafael | Líder |
+| Alex Rafael | Líder/Desenvolvedor |
 | Gabriel Augusto | Designer |
 | José Theves | Desenvolvedor |
 | Gustavo de Brito | Testes |
 
 ---
 
-## 🚀 Como rodar o projeto
+# ⭐ Diferenciais do Aplicativo
+
+- **Experiência semelhante à de aplicativos nativos**
+- **Funcionamento offline após o primeiro acesso**
+- **Instalação direta no celular sem necessidade de loja de aplicativos**
+- **Interface simples e intuitiva**
+- **Divulgação da cultura e do turismo local de Arcoverde**
 
 
