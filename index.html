@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>São João em Arcoverde</title>
+  <link rel="icon" href="assets/img/icone/icone-app.png" type="image/png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="theme-color" content="#E26A1A" />
+  <link rel="manifest" href="manifest.json" />
+
+</head>
+<body> 
+    
+
+
+  <!-- SPLASH -->
+  <div id="splash">
+    <img src="assets/img/design/splash-bg.webp" alt="" class="splash-bg" aria-hidden="true" />
+    <div class="splash-rodape">
+      <p class="splash-subtitulo">Viva essa festa que<br>é para todas as idades!</p>
+      <button id="btn-entrar" class="btn-entrar">Entrar na festa</button>
+    </div>
+  </div>
+
+  <div id="app">
+
+    <!-- ══════════════════════════════
+         ABA INÍCIO
+    ══════════════════════════════ -->
+    <main class="main-scroll aba ativa" id="aba-inicio">
+
+      <header class="hero">
+        <img src="assets/img/design/fogueira.webp" alt="Fogueira São João" class="hero-img" />
+      </header>
+
+      <!-- MENU LIGEIRO -->
+      <section class="secao">
+        <h2 class="secao-titulo">Menu ligeiro</h2>
+        <div class="acesso-grid">
+
+          <button class="acesso-btn" data-aba="programacao">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span>Shows</span>
+          </button>
+
+          <button class="acesso-btn" data-aba="guia">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M14.5 2H9l-.35.15-.65.64-.65-.64L7 2H1.5l-.5.5v10l.5.5h5.29l.86.85h.7l.86-.85h5.29l.5-.5v-10l-.5-.5zm-7 10.32l-.18-.17L7 12H2V3h4.79l.74.74-.03 8.58zM14 12H9l-.35.15-.14.13V3.7l.7-.7H14v9zM6 5H3v1h3V5zm0 4H3v1h3V9zM3 7h3v1H3V7zm10-2h-3v1h3V5zm-3 2h3v1h-3V7zm0 2h3v1h-3V9z" />
+            </svg>
+            <span>Pontos Turísticos</span>
+          </button>
+
+          <button class="acesso-btn" data-aba="mapa">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M21.32,5.05l-6-2h-.07a.7.7,0,0,0-.14,0h-.23l-.13,0h-.07L9,5,3.32,3.05a1,1,0,0,0-.9.14A1,1,0,0,0,2,4V18a1,1,0,0,0,.68.95l6,2h0a1,1,0,0,0,.62,0h0L15,19.05,20.68,21A1.19,1.19,0,0,0,21,21a.94.94,0,0,0,.58-.19A1,1,0,0,0,22,20V6A1,1,0,0,0,21.32,5.05ZM8,18.61,4,17.28V5.39L8,6.72Zm6-1.33-4,1.33V6.72l4-1.33Zm6,1.33-4-1.33V5.39l4,1.33Z" />
+            </svg>
+            <span>Mapa</span>
+          </button>
+
+          <button class="acesso-btn" data-aba="transportes">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M5 2h14v2H5V2zm0 2v6h14V4h2v16h-2v2h-4v-2H9v2H5v-2H3V4h2zm0 14h14v-6H5v6zm2-4h2v2H7v-2zm10 0h-2v2h2v-2z" />
+            </svg>
+            <span>Transporte</span>
+          </button>
+          <button class="acesso-btn" data-aba="gastronomia">
+            <span class="acesso-icone"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 470.026 470.026"
+              fill="currentColor">
+              <g>
+                <path
+                  d="m315.642,197.759c8.033,0 15.963-3.124 21.885-9.044 2.929-2.928 2.93-7.677 0.001-10.606-2.927-2.929-7.676-2.93-10.606-0.001-4.758,4.756-12.031,6.006-18.102,3.108-3.737-1.785-8.215-0.203-10,3.535-1.785,3.737-0.202,8.215 3.535,10 4.239,2.024 8.779,3.008 13.287,3.008z" />
+                <path
+                  d="m467.829,90.232c-2.929-2.927-7.677-2.929-10.607,0l-82.572,82.571-14.567-14.567 82.572-82.572c2.929-2.93 2.929-7.678 0-10.607-2.93-2.928-7.678-2.928-10.607,0l-82.572,82.572-14.567-14.567 82.572-82.572c2.929-2.93 2.929-7.678 0-10.607-2.93-2.928-7.678-2.928-10.607,0l-82.572,82.572-14.567-14.567 82.571-82.572c2.929-2.93 2.929-7.678 0-10.607-2.93-2.928-7.678-2.928-10.607,0l-87.869,87.87c-0.012,0.012-21.218,21.219-21.218,21.219-16.855,16.854-22.207,41.962-14.118,64.034l-17.093,15.171c-3.098,2.75-3.38,7.49-0.631,10.588 1.482,1.67 3.542,2.521 5.612,2.521 1.771,0 3.548-0.623 4.976-1.891l21.104-18.732c2.5-2.22 3.229-5.825 1.789-8.842-8.366-17.52-4.764-38.514 8.967-52.242l15.909-15.909 45.039,45.038c0.013,0.013 19.877,19.876 19.877,19.876l-15.91,15.91c-13.728,13.729-34.722,17.335-52.242,8.967-3.018-1.441-6.622-0.712-8.842,1.789l-17.195,19.373c-2.749,3.098-2.467,7.838 0.631,10.588 1.428,1.268 3.205,1.891 4.976,1.891 2.069,0 4.13-0.852 5.612-2.521l13.634-15.36c6.793,2.489 13.87,3.705 20.909,3.705 15.832-0.002 31.458-6.157 43.125-17.823l21.206-21.206c0.015-0.016 87.883-87.882 87.883-87.882 2.928-2.931 2.928-7.679-0.001-10.609z" />
+                <path
+                  d="m208.703,309.642c-3.097-2.749-7.838-2.467-10.588,0.631l-108.422,122.155c-0.037,0.042-0.074,0.084-0.11,0.127-0.538,0.635-1.056,1.199-1.584,1.727-5.308,5.309-12.364,8.231-19.871,8.231-7.506,0-14.562-2.923-19.87-8.231-10.957-10.956-10.957-28.785 0-39.741 0.527-0.528 1.092-1.046 1.727-1.584 0.043-0.036 0.085-0.073 0.127-0.11l124.446-110.457c3.098-2.75 3.38-7.49 0.631-10.588-2.751-3.099-7.491-3.382-10.588-0.631l-124.388,110.403c-0.923,0.785-1.762,1.558-2.563,2.358-16.805,16.806-16.805,44.15 0,60.956 8.142,8.141 18.965,12.624 30.478,12.624 11.514,0 22.337-4.483 30.479-12.624 0.801-0.802 1.573-1.642 2.359-2.564l108.368-122.094c2.749-3.098 2.467-7.838-0.631-10.588z" />
+                <path
+                  d="m407.352,381.575l-217.046-192.647c16.92-32.58 10.996-72.347-15.352-98.695-34.585-34.586-76.136-55.233-111.151-55.233-18.864,0-34.876,6.041-46.307,17.471-16.61,16.611-21.608,42.241-14.073,72.169 7.26,28.832 25.669,59.122 51.835,85.289 15.978,15.978 37.222,24.776 59.818,24.776 13.595,0 26.909-3.244 38.873-9.429l192.651,217.05c0.785,0.923 1.558,1.762 2.357,2.563 8.142,8.141 18.965,12.624 30.478,12.624 11.514,0 22.337-4.483 30.479-12.624 16.805-16.806 16.805-44.15 0-60.956-0.8-0.8-1.639-1.573-2.562-2.358zm-8.045,52.706c-5.308,5.308-12.364,8.231-19.871,8.231-7.506,0-14.563-2.924-19.87-8.231-0.528-0.527-1.046-1.092-1.584-1.727-0.036-0.043-0.073-0.085-0.11-0.127l-196.725-221.64c-1.468-1.653-3.527-2.521-5.613-2.521-1.351,0-2.714,0.364-3.933,1.116-10.951,6.753-23.581,10.322-36.524,10.322-18.59,0-36.067-7.239-49.211-20.384-24.278-24.278-41.288-52.102-47.896-78.345-6.196-24.606-2.597-45.168 10.134-57.898 8.554-8.555 20.899-13.077 35.699-13.077 31.124,0 68.711,19.005 100.544,50.84 22.92,22.919 27.057,58.175 10.062,85.735-1.912,3.101-1.319,7.127 1.405,9.546l221.64,196.725c0.042,0.037 0.084,0.074 0.127,0.11 0.635,0.538 1.199,1.056 1.727,1.584 10.956,10.956 10.956,28.785-0.001,39.741z" />
+                <path
+                  d="m143.135,111.444c-2.93,2.929-2.93,7.678-0.001,10.606 13.045,13.046 15.404,33.104 5.739,48.778-2.174,3.525-1.078,8.146 2.447,10.32 1.228,0.757 2.587,1.117 3.93,1.117 2.516,0 4.974-1.266 6.391-3.564 13.33-21.617 10.082-49.274-7.899-67.257-2.929-2.927-7.678-2.928-10.607,1.42109e-14z" />
+                <path
+                  d="m115.077,189.704c-10.577,0-20.521-4.118-27.999-11.596-20.502-20.503-34.713-43.395-40.017-64.457-3.363-13.356-2.499-24.606 2.255-29.361 2.929-2.929 2.929-7.678-0.001-10.606-2.93-2.928-7.677-2.929-10.606,0.001-8.85,8.851-11.05,24.346-6.194,43.629 5.956,23.653 21.566,49.01 43.957,71.401 10.312,10.311 24.022,15.989 38.605,15.989 4.143,0 7.5-3.357 7.5-7.5s-3.357-7.5-7.5-7.5z" />
+              </g>
+            </svg>
+            <span>Comidas&Bebidas</span>
+          </button>
+
+          <button class="acesso-btn" data-aba="hoteis">
+            <span class="acesso-icone"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 1024 1024" fill="currentColor">
+              <path
+                d="M313.208 433.633v153.6c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48v-153.6c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48zM981.88 637.295V860.23c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48V637.295c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48zM554.872 860.232V639.345c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48v220.887c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48zm39.936-384.82h358.4c11.311 0 20.48-9.169 20.48-20.48s-9.169-20.48-20.48-20.48h-358.4c-11.311 0-20.48 9.169-20.48 20.48s9.169 20.48 20.48 20.48zm225.28-112.64c16.849 0 30.72-13.871 30.72-30.72v-10.24c0-16.849-13.871-30.72-30.72-30.72h-102.4c-16.849 0-30.72 13.871-30.72 30.72v10.24c0 16.849 13.871 30.72 30.72 30.72h102.4zm0 40.96h-102.4c-39.471 0-71.68-32.209-71.68-71.68v-10.24c0-39.471 32.209-71.68 71.68-71.68h102.4c39.471 0 71.68 32.209 71.68 71.68v10.24c0 39.471-32.209 71.68-71.68 71.68z" />
+              <path
+                d="M539.364 819.272h445.389c11.311 0 20.48-9.169 20.48-20.48s-9.169-20.48-20.48-20.48H539.364c-11.311 0-20.48 9.169-20.48 20.48s9.169 20.48 20.48 20.48zM199.509 428.513v423.936c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48V428.513c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48z" />
+              <path
+                d="M399.189 839.137v40.96h-358.4v-40.96h358.4zm0 40.96h-358.4c-27.307 0-27.307-40.96 0-40.96h358.4c27.307 0 27.307 40.96 0 40.96zm-50.027-691.761c-.374-1.651-3.331-4.012-5.032-4.012H95.851c-1.701 0-4.658 2.361-5.032 4.014l-48.73 215.061h355.803l-48.73-215.063zm89.817 211.039c5.39 23.8-11.526 44.984-35.928 44.984H36.93c-24.402 0-41.317-21.184-35.928-44.984L50.87 179.289c4.602-20.319 24.148-35.924 44.98-35.924h248.279c20.832 0 40.379 15.605 44.98 35.922l49.869 220.088zm445.114-53.217h20.859c4.625 0 9.267 1.321 12.72 3.478 2.356 1.471 3.387 2.767 3.441 3.017l60.129 281.19c.161.752-425.259 1.022-425.259 1.022-.163 0 59.912-282.212 59.912-282.212.053-.247 1.085-1.543 3.443-3.015 3.455-2.158 8.098-3.479 12.718-3.479h20.357v-40.96h-20.357c-26.191 0-51.244 15.645-56.215 38.888l-60.129 281.191c-5.537 25.971 13.744 50.547 40.272 50.547h425.042c26.532 0 45.827-24.585 40.271-50.549l-60.129-281.188c-4.972-23.245-30.018-38.889-56.215-38.889h-20.859v40.96z" />
+            </svg>
+            <span>Hospedagem</span>
+          </button>
+
+        </div>
+      </section>
+
+      <!-- ATRAÇÕES ARRETADAS -->
+      <section class="secao">
+        <div class="secao-header">
+          <h2 class="secao-titulo">Atrações arretadas</h2>
+          <button class="ver-todas" data-aba="programacao">Ver todas</button>
+        </div>
+        <div class="atracoes-lista" id="atracoes-lista"></div>
+      </section>
+
+      <!-- ONDE ENCHER O BUCHO -->
+      <section class="secao secao-gastro">
+
+        <div class="secao-header">
+          <h2 class="secao-titulo">Onde encher o bucho</h2>
+          <button class="ver-todas" data-aba="servicos">
+            Ver todas
+          </button>
+        </div>
+
+        <div class="gastro-grid">
+
+          <!-- BAR MADEIRA DE LEI -->
+          <div class="gastro-card">
+
+            <div class="gastro-img">
+              <img src="assets/img/estabelecimentos/bar-madeira-de-lei.webp" alt="Bar Madeira de Lei">
+            </div>
+
+            <div class="gastro-info">
+              <strong>Madeira de Lei</strong>
+
+              <p>R. Maria Cottas, 84 - Arcoverde, PE
+                <br> Qua à Dom • 19h <br>
+                @barmadeiradelei
+              </p>
+            </div>
+
+          </div>
+
+          <!-- PIZZARIA VITORIOSA -->
+          <div class="gastro-card">
+
+            <div class="gastro-img">
+              <img src="assets/img/estabelecimentos/pizzaria-vitoriosa.webp" alt="Pizzaria Vitoriosa">
+            </div>
+
+            <div class="gastro-info">
+              <strong>Pizzaria Vitoriosa</strong>
+
+              <p>
+                Rua Padre Roma, 280 - Arcoverde, PE
+                <br> Seg à Dom • 18h
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- ══════════════════════════════
+         ABA PROGRAMAÇÃO
+    ══════════════════════════════ -->
+    <section id="aba-programacao" class="aba">
+
+      <!-- Cabeçalho fixo com busca e filtro de datas -->
+      <div class="prog-header">
+        <div class="prog-header-top">
+          <h2 class="prog-titulo"> Programação</h2>
+        </div>
+
+        <!-- Barra de busca -->
+        <div class="prog-busca-wrap">
+          <svg class="prog-busca-icone" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input id="prog-busca" class="prog-busca" type="search" placeholder="Buscar artista ou show..."
+            autocomplete="off" />
+        </div>
+
+        <!-- Filtro de datas -->
+        <div class="prog-datas-scroll" id="prog-datas-scroll"></div>
+      </div>
+
+      <!-- Lista de shows -->
+      <div class="prog-lista" id="prog-lista"></div>
+
+    </section>
+
+    <!-- ══════════════════════════════
+         ABA FAVORITOS
+    ══════════════════════════════ -->
+    <section id="aba-favoritos" class="aba">
+
+      <!-- Cabeçalho -->
+      <div class="fav-header">
+        <h2 class="fav-titulo">Favoritos</h2>
+      </div>
+
+      <!-- Estado vazio -->
+      <div id="fav-vazio" class="fav-vazio">
+        <img src="assets/img/design/gato.webp" alt="Gatinho festeiro" class="fav-vazio-img" />
+        <p class="fav-vazio-titulo">Ainda sem favoritos</p>
+        <p class="fav-vazio-subtitulo">
+          Toque no coração de um show<br>pra guardar aqui e não perder<br>nenhum momento!
+        </p>
+        <button id="btn-explorar" class="btn-explorar">Explorar programação</button>
+      </div>
+
+      <!-- Lista de favoritos -->
+      <div id="fav-lista" class="fav-lista" style="display:none;"></div>
+
+    </section>
+
+    <!-- ══════════════════════════════
+         ABA SERVICOS
+    ══════════════════════════════ -->
+
+    <section id="aba-servicos" class="aba">
+      <div class="fav-header">
+        <h2 class="fav-titulo">Serviços</h2>
+      </div>
+
+      <div class="servicos-grid">
+        <button class="servico-btn" data-aba="gastronomia">
+          <img class="servico-img" src="assets/img/design/gastronomia.webp" alt="Gastronomia">
+          <strong class="servico-titulo">Gastronomia</strong>
+          <span class="servico-descricao">Descubra os sabores do nosso São João</span>
+        </button>
+
+        <button class="servico-btn" data-aba="mapa">
+          <img class="servico-img" src="assets/img/design/mapa.webp" alt="Mapa dos Polos">
+          <strong class="servico-titulo">Mapa dos Polos</strong>
+          <span class="servico-descricao">Encontre os principais polos da festa</span>
+        </button>
+
+        <button class="servico-btn" data-aba="hoteis">
+          <img class="servico-img" src="assets/img/design/hoteis.webp" alt="Hotéis e Pousadas">
+          <strong class="servico-titulo">Hotéis e Pousadas</strong>
+          <span class="servico-descricao">Onde ficar com conforto durante o evento</span>
+        </button>
+
+        <button  class="servico-btn" data-aba="transportes">
+          <img class="servico-img" src="assets/img/design/transporte.webp" alt="transporte">
+          <strong class="servico-titulo">Transportes</strong>
+          <span class="servico-descricao">Opções de locomoção para você aproveitar a festa</span>
+        </button>
+
+
+      </div>
+
+
+
+    </section>
+<!-- ══════════════════════════════
+         TELA: GASTRONOMIA
+    ══════════════════════════════ -->
+    <section id="aba-gastronomia" class="aba">
+      <div class="sub-header">
+        <button class="btn-voltar" data-aba="servicos">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="sub-titulo">Gastronomia</h2>
+        <div style="width: 40px;"></div>
+      </div>
+
+      <div class="sub-conteudo">
+
+        <div class="cards-sub">
+          <li class="guia-item">
+            <div class="guia-img-wrap">
+              <img src="assets/img/estabelecimentos/pizzaria-vitoriosa.webp" alt="Pizzaria Vitoriosa"
+                class="guia-img" />
+            </div>
+            <div class="guia-info">
+              <strong class="guia-nome">Pizzaria Vitoriosa</strong>
+              <p class="guia-desc">Endereço: R. Padre Roma, 280 - Santa Luzia, 
+                <br>Arcoverde - PE
+                <br> Seg à Dom • 18h </br>
+                <span class="guia-distancia">Próximo ao polo principal</span>
+              </p>
+
+            </div>
+          </li>
+
+          <div class="cards-sub">
+            <li class="guia-item">
+              <div class="guia-img-wrap">
+                <img src="assets/img/estabelecimentos/bar-madeira-de-lei.webp" alt="bar maadeira de lei"
+                  class="guia-img" />
+              </div>
+              <div class="guia-info">
+                <strong class="guia-nome">Madeira de Lei</strong>
+                <p class="guia-desc">Endereço: R. Maria Cottas, 84-112 - Santa Luzia, 
+                  <br>Arcoverde PE
+                  <br> Qua à Dom • 19h <br>
+                  @barmadeiradelei <br>
+                  <span class="guia-distancia">Próximo ao polo principal</span>
+                </p>
+              </div>
+            </li>
+            <div class="cards-sub">
+              <li class="guia-item">
+                <div class="guia-img-wrap">
+                  <img src="assets/img/estabelecimentos/oca-do-buda.webp" alt="restarante Oca do Buda"
+                    class="guia-img" />
+                </div>
+                <div class="guia-info">
+                  <strong class="guia-nome">A OCA DO BUDA</strong>
+                  <p class="guia-desc">Endereço: Av. José Bonifácio, 540 - São Cristóvão,
+                    <br> Arcoverde PE
+                   <br>@aocadobuda 
+                  <br>Whatsapp: (87)91485539</p>
+                </div>
+              </li>
+              <div class="cards-sub">
+                <li class="guia-item">
+                  <div class="guia-img-wrap">
+                    <img src="assets/img/estabelecimentos/monteiro-bar.webp" alt="monteiro bar"
+                      class="guia-img" />
+                  </div>
+                  <div class="guia-info">
+                    <strong class="guia-nome">Monteiro Bar</strong>
+                    <p class="guia-desc">Localização: Praça Barão do Rio Branco, 91 – Centro, Arcoverde – PE
+                      <br>Horário: A partir dás 15hr30
+                      <br>Contato: 87 9909-9498
+                      <br>@monteirobaroficial (Instagram) </p>
+                  </div>
+                </li>
+                <div class="cards-sub">
+                  <li class="guia-item">
+                    <div class="guia-img-wrap">
+                      <img src="assets/img/estabelecimentos/baronni.webp" alt="baroni hamburgueria"
+                        class="guia-img" />
+                    </div>
+                    <div class="guia-info">
+                      <strong class="guia-nome">Baronni</strong>
+                      <p class="guia-desc">Localização: Rua Aprígio Estevão Tavares, 35 – Centro, Arcoverde – PE
+                      <br>Horário: Das 17h30 às 23h30 <br>
+                      (Domingo, Segunda, Quarta e Sexta)
+                      <br>Contato: (87) 9-9147-3445
+                      <br>@baronnihamburgueria (Instagram) </p>
+                      
+                    </div>
+                  </li>
+
+                </div>
+              </div>
+    </section>
+    <!-- ══════════════════════════════
+         TELA: MAPA DOS POLOS
+    ══════════════════════════════ -->
+    <section id="aba-mapa" class="aba">
+      <div class="sub-header">
+        <button class="btn-voltar" data-aba="servicos">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="sub-titulo">Mapa dos Polos</h2>
+        <div style="width: 40px;"></div>
+      </div>
+
+
+      <div class="sub-conteudo">
+        <p class="sub-descricao">Encontre os principais polos da festa</p>
+
+        <div id="mapa"></div>
+        
+        <div class="cards-sub">
+          <div class="card-sub">
+            <h3> Polo Multicultural</h3>
+            <p> Localização: Pátio de Eventos da Estação – Centro, Arcoverde – PE <br>
+          O principal palco do São João de Arcoverde. 
+          Serão 16 noites consecutivas de shows reunindo artistas consagrados 
+          e atrações que valorizam a cultura nordestina, misturando forró 
+          tradicional, piseiro, sertanejo e música regional. O palco que 
+          concentra os grandes nomes da festa.</p>
+            <span class="polo-localizacao">Centro</span>
+          </div>
+          
+          <div class="card-sub">
+            <h3>Polo Raízes do Coco – Lula Calixto</h3>
+            <p> Localização: Alto do Cruzeiro, Arcoverde – PE <br>
+            Um dos espaços culturais mais simbólicos do São João e referência na 
+            valorização da cultura popular nordestina. Reúne dança, música, coco
+            de roda e manifestações populares, com grupos tradicionais como Coco 
+            das Irmãs Lopes, Samba de Coco Raízes de Arcoverde e Samba de Coco Trupe.</p>
+            <span class="polo-localizacao">Alto do Cruzeiro</span>
+          </div>
+          
+          <div class="card-sub">
+            <h3>Praça da Bandeira e Praça Winston Siqueira</h3>
+            <p> Localização: Centro, Arcoverde – PE <br>
+            Pontos estratégicos espalhados pelo Centro da cidade que
+            complementam a programação descentralizada. Durante o evento, 
+            mais de 800 mil pessoas circulam pelos mais de 10 polos e pontos 
+            de animação espalhados pela cidade.</p>
+            <span class="polo-localizacao">Centro</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         TELA: HOTÉIS E POUSADAS
+    ══════════════════════════════ -->
+
+       <section id="aba-hoteis" class="aba">
+
+      <!-- Cabeçalho -->
+      <div class="sub-header">
+         <button class="btn-voltar" data-aba="servicos">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="sub-titulo">Hotéis e pousadas</h2>
+        <div style="width: 40px;"></div>
+      </div>
+
+      <!-- Lista de atrações turísticas -->
+      <!-- TODO: substituir pelos dados reais -->
+      <ul class="guia-lista">
+
+        <!-- Item 1 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/estabelecimentos/hotel-cintra.webp" alt="hotel-cintra"
+              class="guia-img" />
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Hotel Cintra</strong>
+            <p class="guia-desc"> Pousada bem localizada no centro de Arcoverde, com 33 apartamentos e capacidade para 70 hóspedes. 
+            Conforto e acessibilidade para estadias tranquilas.
+            <br><strong>Localização: Rua Júlio Tavares de Lima, 174 – Centro, Arcoverde – PE
+            <br>Horário: 24 horas
+            <br>Contato: (87) 9 9996-8115
+            <br>Instagram: @hotelcintra_arco</strong></p>
+          </div>
+        </li>
+
+        <!-- Item 2 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/estabelecimentos/hotel-monteirao.webp" alt="hotel monteirao" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Hotel Monteirão</strong>
+            <p class="guia-desc"> Hospedagem no coração de Arcoverde, com 49 apartamentos e capacidade para 120 hóspedes. 
+                    Ótima opção para quem busca praticidade e localização central,
+                    com fácil acesso a bancos, comércio e serviços da cidade.
+                    <br> <strong>Localização: Av. José Magalhães de França, 165 – Centro, Arcoverde – PE
+                    <br> Horário: 24 horas
+                    <br> Contato: (87) 3821-1776 
+                    <br> (87) 9 8837-8940 Whatsapp</strong></p>
+          </div>
+        </li>
+
+        <!-- Item 3 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/estabelecimentos/hotel-olho-d'agua.webp" alt="hotel olho d'agua" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Hotel Olho D'agua</strong>
+            <p class="guia-desc"> Hotel com 45 apartamentos e 90 leitos no bairro São Miguel. Uma opção confortável e bem estruturada para quem visita Arcoverde.
+
+             <br> <strong>Localização: Rua Armando de Siqueira Brito, 475 – São Miguel, Arcoverde – PE
+             <br> Horário: 24 horas
+             <br> Contato: (87) 3821-0798
+             <br> Rede social: @hotelolhodaguadosbredos (Instagram)
+             <br> (87) 9167-0380 Whatsapp </strong></p>
+          </div>
+        </li>
+
+        <!-- Item 4 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/estabelecimentos/lw-hotel.webp" alt="lw hotel" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Lw Hotel</strong>
+            <p class="guia-desc"> Hotel moderno no centro da cidade, com 34 apartamentos e 72 leitos. 
+          Oferece Wi-Fi gratuito e ar-condicionado em todos os quartos, ideal para hospedagens de negócios ou lazer.
+          
+          <strong>
+          <br>Localização: Av. Coronel Antônio Japiassu, 370, 1º Andar – Centro, Arcoverde – PE
+          <br>Horário: 24 horas
+          <br>Contato: (87) 3822-2808 
+          <br>WhatsApp: (87) 9 9634-8078
+          <br>Instagram: @lwhotelarcoverde</strong></p>
+          
+          </div>
+        </li>
+
+        <!-- Item 5 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/estabelecimentos/max-hotel.webp" alt="max hotel" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Max Hotel</strong>
+            <p class="guia-desc"> Hotel com estrutura completa às margens da BR 232, ideal para viajantes e motoristas. 
+          São 40 apartamentos e 114 leitos, incluindo 2 apartamentos adaptados para PCD
+          <br> <strong>Localização: BR 232, km 254 – São Cristóvão, Arcoverde – PE
+          <br> Horário: 24 horas
+          <br> Contato: (87) 3822-1552 | contato@maxhotel.com.br
+          <br> Rede social: @maxhotelarcoverde (Instagram)</strong></p>
+            
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ══════════════════════════════
+         TELA: TRANSPORTES
+    ══════════════════════════════ -->
+    <section id="aba-transportes" class="aba">
+      <div class="sub-header">
+        <button class="btn-voltar" data-aba="servicos">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="sub-titulo">Transportes</h2>
+        <div style="width: 40px;"></div>
+      </div>
+
+      <div class="sub-conteudo">
+        <p class="sub-descricao">Principais Pontos de Moto-Táxi em Arcoverde</p>
+        
+        <div class="cards-sub">
+          <div class="card-sub">
+            <h3>MotoTáxi São Cristóvão</h3>
+            <p>R. Estácio Coimbra, 273 - São Cristóvão
+              <br>Telefone: (87) 3822-3015</p>
+            <span class="contato-info">(Funcionamento 24h)</span>
+          </div>
+          
+          <div class="card-sub">
+            <h3>MotoTáxi Cruzeta</h3>
+            <p>Av. Severiano José Freire, 535 - Centro 
+              <br> Telefone: (87) 3822-3349.</p>
+          </div>
+          
+          <div class="card-sub">
+            <h3>MotoTáxi Avenida</h3>
+            <p>Av. Pinto de Campos, 739 - São Miguel 
+              <br>Telefone: (87) 3822-3712.</p>
+          </div>
+          
+          <div class="card-sub">
+            <h3>MotoTáxi São Geraldo</h3>
+            <p>R. Joaquim Franklin Cordeiro, 17 - Santa Luzia 
+              <br>Telefone: (87) 3821-1582.</p>
+          </div>
+
+          <div class="card-sub">
+            <h3>MotoTáxi Maria De Fatima Freire</h3>
+            <p>Residencial Pôr do Sol 
+              <br>Telefone: (87) 99606-4641.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--══════════════════════════════
+         ABA GUIA
+    ══════════════════════════════  -->
+    <section id="aba-guia" class="aba">
+
+      <!-- Cabeçalho -->
+      <div class="guia-header">
+        <h2 class="guia-titulo">Guia Turístico</h2>
+      </div>
+
+      <!-- Lista de atrações turísticas -->
+      <!-- TODO: substituir pelos dados reais -->
+      <ul class="guia-lista">
+
+        <!-- Item 1 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/pontosT/santuario-divina-misericordia.webp" alt="santuario-divina-misericordia"
+              class="guia-img" />
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Santuário Divina Misericórdia</strong>
+            <p class="guia-desc">Localizado na Serra das Varas, zona rural de Arcoverde (PE). Fundado em 2007 pelo Padre
+              Adilson
+              Simões, o espaço nasceu após uma inspiração religiosa do pároco, tornando-se um importante polo de
+              peregrinação,
+              evangelização e assistência social no sertão </p>
+            <span class="guia-distancia">12,5 km do centro</span>
+          </div>
+        </li>
+
+        <!-- Item 2 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/pontosT/Alto do cruzeiro.webp" alt="Alto do Cruzeiro" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Alto do Cruzeiro</strong>
+            <p class="guia-desc">O Alto do Cruzeiro fica a cerca de 2 km do centro de Arcoverde e é um dos principais
+              berços da cultura popular local. Sua origem está profundamente ligada à fé religiosa e ao surgimento do
+              coco,
+              destacando-se como o local de nascimento do grupo Coco Raízes de Arcoverde.</p>
+            <span class="guia-distancia">2 km do centro</span>
+          </div>
+        </li>
+
+        <!-- Item 3 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/pontosT/Igreja Matriz do livramento.webp" alt="Igreja Matriz" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Igreja Matriz Nossa Senhora do Livramento</strong>
+            <p class="guia-desc">A igreja teve origem em uma pequena capela erguida por volta de 1812 pelo português
+              Leonardo
+              Pacheco Couto. Atualmente, a paróquia centenária conta com uma arquitetura revitalizada que destaca
+              elementos
+              clássicos e um altar-mor inteiramente esculpido em mármore</p>
+            <span class="guia-distancia">Centro</span>
+          </div>
+        </li>
+
+        <!-- Item 4 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/pontosT/estacao-da-cultura.webp" alt="Estação da Cultura" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Estação da Cultura</strong>
+            <p class="guia-desc">Em 2001, um grupo de jovens ocupou a antiga estação ferroviária,
+              abandonada 20 anos antes, para criar um espaço de arte e cultura. Hoje abriga museus, oficinas e
+              apresentações.</p>
+            <span class="guia-distancia">Centro</span>
+          </div>
+        </li>
+
+        <!-- Item 5 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/pontosT/CECORA.webp" alt="cecora" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">CECORA</strong>
+            <p class="guia-desc">A área anteriormente era uma fábrica de algodão para armazenamento
+              e beneficiamento. Hoje, o CECORA, o local é um dos principais centros de comércio,
+              reunindo feira livre, venda de roupas, alimentos, artesanato e produtos regionais.</p>
+            <span class="guia-distancia">Centro</span>
+          </div>
+        </li>
+
+        <!-- Item 6 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/pontosT/praça da bandeira.webp" alt="praça da bandeira" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Praça da Bandeira</strong>
+            <p class="guia-desc">A Praça da Bandeira é um sítio histórico. Ela abrigou o cinema Bandeirantes,
+              que fechou no início da década de 1980 devido à crescente popularidade da televisão. Para alguns,
+              ela guarda memórias da juventude.</p>
+            <span class="guia-distancia">Centro</span>
+          </div>
+        </li>
+
+        <!-- Item 7 -->
+        <li class="guia-item">
+          <div class="guia-img-wrap">
+            <img src="assets/img/pontosT/praca-virginia-guerra.webp" alt="praça Virginia Guerra" class="guia-img" />
+            <!-- adicionar caminho da imagem -->
+          </div>
+          <div class="guia-info">
+            <strong class="guia-nome">Praça Virginia Guerra</strong>
+            <p class="guia-desc">Antigamente, funcionava como um triângulo de manobras
+              e depósito de dormentes da antiga malha ferroviária. Hoje a Praça é um espaço de lazer servindo
+              para eventos, apresentações e feiras de artesanato durante festivais.</p>
+            <span class="guia-distancia">Centro</span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="aba-servicos" class="aba">
+      <div style="padding:32px 16px; text-align:center; color:#7A4A1E; font-family:'Baloo 2',cursive;">
+
+        <p style="font-size:1.2rem; font-weight:700; margin-top:12px;">Em breve</p>
+      </div>
+    </section>
+
+
+<!-- ══════════════════════════════
+         ABA SOBRE
+══════════════════════════════ -->
+<section id="aba-sobre" class="aba">
+
+  <!-- TOPO -->
+  <div class="sobre-topo-decorado">
+
+    <!-- IMAGEM DAS BANDEIRAS -->
+    <img
+      class="sobre-bandeiras"
+      src="assets/img/design/bandeirinhas.webp"
+      alt="Bandeiras Juninas"
+    >
+
+    <div class="sobre-header">
+
+      <h2 class="sobre-titulo">
+        Sobre o São João<br>
+        de Arcoverde
+      </h2>
+
+      <p class="sobre-descricao">
+        O São João de Arcoverde é uma das maiores e mais tradicionais
+        festas juninas de Pernambuco. O evento reúne cultura popular,
+        música, dança, gastronomia e tradição nordestina,
+        atraindo visitantes de diversas regiões do Brasil.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- CORPO -->
+  <div class="sobre-corpo">
+
+    <!-- DESENVOLVEDORES -->
+    <div class="sobre-secao">
+
+      <h3 class="sobre-secao-titulo">
+        Desenvolvido por
+      </h3>
+
+      <div class="sobre-avatares">
+
+        <!-- Alex -->
+        <div class="sobre-avatar-item">
+
+          <div class="sobre-avatar-circulo">
+            <img
+              src="assets/img/equipe/rafael.webp"
+              alt="Alex Rafael"
+            >
+          </div>
+
+          <span class="sobre-avatar-nome">
+            Alex Rafael
+          </span>
+
+        </div>
+
+        <!-- José -->
+        <div class="sobre-avatar-item">
+
+          <div class="sobre-avatar-circulo">
+            <img
+              src="assets/img/equipe/theves.webp"
+              alt="José Theves"
+            >
+          </div>
+
+          <span class="sobre-avatar-nome">
+            José Theves
+          </span>
+
+        </div>
+
+        <!-- Gabriel -->
+        <div class="sobre-avatar-item">
+
+          <div class="sobre-avatar-circulo">
+            <img
+              src="assets/img/equipe/gabriel.webp"
+              alt="Gabriel Augusto"
+            >
+          </div>
+
+          <span class="sobre-avatar-nome">
+            Gabriel Augusto
+          </span>
+
+        </div>
+
+        <!-- Gustavo -->
+        <div class="sobre-avatar-item">
+
+          <div class="sobre-avatar-circulo">
+            <img
+              src="assets/img/equipe/gustavo.webp"
+              alt="Gustavo de Brito"
+            >
+          </div>
+
+          <span class="sobre-avatar-nome">
+            Gustavo de Brito
+          </span>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROFESSOR -->
+    <div class="sobre-secao">
+
+      <h3 class="sobre-secao-titulo">
+        Professor orientador
+      </h3>
+
+      <div class="sobre-professor">
+
+        <div class="sobre-avatar-item">
+
+          <div class="sobre-avatar-circulo">
+            <img
+              src="assets/img/equipe/prof-will.webp"
+              alt="Professor Willams Jesus"
+            >
+          </div>
+
+          <span class="sobre-avatar-nome">
+            Willams Jesus
+          </span>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AESA -->
+    <div class="sobre-caixa">
+        <img src="assets/img/icone/aesa.webp" alt="logo aesa" class="caixa-img">
+
+      <h3 class="sobre-secao-titulo">
+        Sobre a AESA de Arcoverde
+      </h3>
+
+      <p class="sobre-aesa-texto">
+        A AESA — Autarquia de Ensino Superior de Arcoverde —
+        é uma importante instituição de ensino do Sertão pernambucano,
+        contribuindo para a formação acadêmica, pesquisa e extensão,
+        incentivando o desenvolvimento regional e cultural.
+      </p>
+
+    </div>
+
+    <!-- CONTATO -->
+    <div class="sobre-caixa">
+       <img src="assets/img/icone/linkedin.webp" alt="logo linkedin" class="caixa-img">
+
+      <h3 class="sobre-secao-titulo">
+        Acompanhe nosso trabalho no Linkedin
+      </h3>
+      <br>
+      <div class="sobre-links">
+
+        <div class="sobre-link-item">
+          <span>Alex Rafael</span>
+          <a href="#">www.linkedin.com/in/alex-rafael-lopes</a>
+        </div>
+
+        <div class="sobre-link-item">
+          <span>José Theves</span>
+          <a href="#">www.linkedin.com/in/jose-theves-tayel-gomes-dos-santos</a>
+        </div>
+
+        <div class="sobre-link-item">
+          <span>Gabriel Augusto</span>
+          <a href="#">www.linkedin.com/in/gabriel-augusto-lacerda</a>
+        </div>
+
+        <div class="sobre-link-item">
+          <span>Gustavo de Brito</span>
+          <a href="#">www.linkedin.com/in/gustavo-de-brito-silva</a>
+        </div>
+
+        <div class="sobre-link-item">
+          <span>Willams Jesus</span>
+          <a href="#">www.linkedin.com/in/willams-de-jesus</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- ── BOTTOM NAV ── -->
+    <nav class="bottom-nav">
+      <button class="nav-btn ativo" data-aba="inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg>
+        <span>Início</span>
+      </button>
+      <button class="nav-btn" data-aba="programacao">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        <span>Programação</span>
+      </button>
+      <button class="nav-btn" data-aba="favoritos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>Favoritos</span>
+      </button>
+      <button class="nav-btn" data-aba="servicos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M21.32,5.05l-6-2h-.07a.7.7,0,0,0-.14,0h-.23l-.13,0h-.07L9,5,3.32,3.05a1,1,0,0,0-.9.14A1,1,0,0,0,2,4V18a1,1,0,0,0,.68.95l6,2h0a1,1,0,0,0,.62,0h0L15,19.05,20.68,21A1.19,1.19,0,0,0,21,21a.94.94,0,0,0,.58-.19A1,1,0,0,0,22,20V6A1,1,0,0,0,21.32,5.05ZM8,18.61,4,17.28V5.39L8,6.72Zm6-1.33-4,1.33V6.72l4-1.33Zm6,1.33-4-1.33V5.39l4,1.33Z" />
+        </svg>
+        <span>Serviços</span>
+      </button>
+      <button class="nav-btn" data-aba="guia">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M14.5 2H9l-.35.15-.65.64-.65-.64L7 2H1.5l-.5.5v10l.5.5h5.29l.86.85h.7l.86-.85h5.29l.5-.5v-10l-.5-.5zm-7 10.32l-.18-.17L7 12H2V3h4.79l.74.74-.03 8.58zM14 12H9l-.35.15-.14.13V3.7l.7-.7H14v9zM6 5H3v1h3V5zm0 4H3v1h3V9zM3 7h3v1H3V7zm10-2h-3v1h3V5zm-3 2h3v1h-3V7zm0 2h3v1h-3V9z" />
+        </svg>
+        <span>Guia</span>
+      </button>
+      <button class="nav-btn" data-aba="sobre">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        <span>Sobre</span>
+      </button>
+    </nav>
+
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/script.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(console.error);
+  });
+}
+</script>
+
+</body>
+</html>
