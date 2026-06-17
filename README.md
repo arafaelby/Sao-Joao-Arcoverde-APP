@@ -6,14 +6,13 @@ O São João de Arcoverde é um dos maiores eventos culturais do Nordeste, reuni
 
 ## 📱 Funcionalidades:
 
-📅 Informações sobre o evento
-🎤 Exibição de atrações e programação
-🍽️ Seção de gastronomia local
-🏨 Informações sobre hospedagem
-📍 Destaque para pontos turísticos da cidade
-📱 Interface responsiva para smartphones, tablets e desktops
-🌐 Funcionamento offline através de PWA
-📲 Possibilidade de instalação como aplicativo no dispositivo
+📅 **Informações sobre o evento**
+🎤 **Exibição de atrações e programação**
+🍽️ **Seção de gastronomia local**
+🏨 **Informações sobre hospedagem**
+📍 **Destaque para pontos turísticos da cidade**
+🌐 **Funcionamento offline através de PWA**
+📲 **Possibilidade de instalação como aplicativo no dispositivo**
 
 ---
 
