@@ -11,8 +11,6 @@ O São João de Arcoverde é um dos maiores eventos culturais do Nordeste, reuni
 - **Seção de gastronomia local**
 - **Informações sobre hospedagem**
 - **Destaque para pontos turísticos da cidade**
-- **Funcionamento offline através de PWA**
-- **Possibilidade de instalação como aplicativo no dispositivo**
 
 ---
 
